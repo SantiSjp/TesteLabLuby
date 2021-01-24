@@ -1,25 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace LogicaDeProgramacao._9_StringMatriz
 {
     public class StringMatriz
     {
-
         public int[][] TransformarEmMatriz(string valor)
         {
             var splitString = valor.Split(',');
-            var teste = new Dictionary<int, int>();
+            var resultList = new List<int[]>();
+            var auxList = new List<int>();
 
-            foreach (var item in splitString)
+            for (int i = 0; i < splitString.Length; i++)
             {
-                var convert = int.Parse(item);
-            }
+                if (i != 0 && i % 2 != 0)
+                {
+                    auxList.Add(int.Parse(splitString[i - 1]));
+                    auxList.Add(int.Parse(splitString[i]));
+                    resultList.Add(auxList.ToArray());
+                    auxList.Clear();
+                }
 
-            
-            return new int[][] { new int[] { 1, 2 }, new int[] { 3, 4 }, new int[] { 5, 6 } };
+                if (i == splitString.Length - 1 && i % 2 == 0)
+                {
+                    auxList.Add(int.Parse(splitString[i]));
+                    resultList.Add(auxList.ToArray());
+                    auxList.Clear();
+                }
+
+            }
+            var result = resultList.ToArray();
+            return result;
         }
     }
 }

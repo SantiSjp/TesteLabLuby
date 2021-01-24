@@ -1,4 +1,5 @@
 ﻿using LogicaDeProgramacao._1_Fatorial;
+using LogicaDeProgramacao._10_ElementosFaltantes;
 using LogicaDeProgramacao._2_Premio;
 using LogicaDeProgramacao._3_NumeroPrimo;
 using LogicaDeProgramacao._4_Vogais;
@@ -97,9 +98,29 @@ namespace LogicaDeProgramacao
             // Calcula Elementos Array
             Console.WriteLine("----- 9 - Transforma Em Matriz -----");
             var stringMatriz = new StringMatriz();
-            var numerosComVirgula = "1,2,3,4,5,6";
+            var numerosComVirgula = "1,2,3,4,5,6,7";
             var resultadoMatriz = stringMatriz.TransformarEmMatriz(numerosComVirgula);
+            foreach (var item in resultadoMatriz)
+            {
+                foreach (var item2 in item)
+                {
+                    Console.Write(item2 + ",");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("");
 
+            // Calcula Elementos Faltantes
+            Console.WriteLine("----- 10 - Elementos Faltantes -----");
+            var elementosFaltantes = new ElementosFaltantes();
+            int[] vetor1 = new int[] { 1, 4, 5 };
+            int[] vetor2 = new int[] { 1, 2, 3, 4, 5 };
+            var resultadoElementosFaltantes = elementosFaltantes.ObterElementosFaltantes(vetor1, vetor2);
+            foreach (var item in resultadoElementosFaltantes)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("");
         }
     }
 }
