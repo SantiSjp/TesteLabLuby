@@ -17,7 +17,7 @@ namespace _3DesafioPOO.MaquinaVendas
         }
 
         public List<Produto> Produto { get; set; }
+        public double ValorTotalDeVenda { get; set; }
 
-  
     }
 }
