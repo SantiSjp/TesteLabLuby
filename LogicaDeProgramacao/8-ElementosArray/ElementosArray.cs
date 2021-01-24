@@ -7,7 +7,7 @@ namespace LogicaDeProgramacao._8_ElementosArray
     public class ElementosArray
     {
 
-        public string[] BuscarPessoa(string[] array)
+        public string[] BuscarPessoa(string[] array, string pessoa)
         {
             var arrayToList = new List<string>();
             foreach (var item in array)
@@ -15,7 +15,7 @@ namespace LogicaDeProgramacao._8_ElementosArray
                 arrayToList.Add(item);
             }
 
-            var resultado = arrayToList.Where(x => x.Contains("Doe"));
+            var resultado = arrayToList.Where(x => x.Contains(pessoa));
             return resultado.ToArray();
         }
     }

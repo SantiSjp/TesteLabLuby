@@ -6,6 +6,7 @@ using LogicaDeProgramacao._5_Desconto;
 using LogicaDeProgramacao._6_DiferencaData;
 using LogicaDeProgramacao._7_ElementosPares;
 using LogicaDeProgramacao._8_ElementosArray;
+using LogicaDeProgramacao._9_StringMatriz;
 using System;
 
 namespace LogicaDeProgramacao
@@ -86,12 +87,19 @@ namespace LogicaDeProgramacao
                 "Bobby Louis",
                 "Lisa Romero"
             };
-            var resultadoElementos = elementosArray.BuscarPessoa(arrayDeNomes);
+            var resultadoElementos = elementosArray.BuscarPessoa(arrayDeNomes, "Doe");
             foreach (var item in resultadoElementos)
             {
                 Console.WriteLine(item);
             }
             Console.WriteLine("");
+
+            // Calcula Elementos Array
+            Console.WriteLine("----- 9 - Transforma Em Matriz -----");
+            var stringMatriz = new StringMatriz();
+            var numerosComVirgula = "1,2,3,4,5,6";
+            var resultadoMatriz = stringMatriz.TransformarEmMatriz(numerosComVirgula);
+
         }
     }
 }
